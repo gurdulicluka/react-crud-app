@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+
+import Pagination from "./components/Pagination/Pagination";
+import Header from "./layout/Header";
+import List from "./layout/List";
+import store from "./store/vehiclesStore";
 
 function App() {
+  useEffect(() => {
+    store.getData();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="w-screen pb-10">
+      <Header />
+      <List />
+      <Pagination />
     </div>
   );
 }

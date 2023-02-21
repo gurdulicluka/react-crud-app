@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Vehicles CRUD application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Simple web application to showcase fundamental CRUD operations
 
-## Available Scripts
+## Technologies
 
-In the project directory, you can run:
+Project is created with:
 
-### `npm start`
+- React.js 18.2.0
+- Tailwind CSS 3.2.4
+- MobX 6.7.0
+- MobX-react 7.6.0
+- Axios 1.3.2
+- Baasic (BaaS)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Development dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+For always consistent formatting across all files I've used the following:
 
-### `npm test`
+- [Prettier](https://www.npmjs.com/package/prettier) (Core)
+- Plugins for Prettier :
+  - [sort-imports](https://github.com/trivago/prettier-plugin-sort-imports) 4.0.0
+  - [tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) 0.2.2
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup
 
-### `npm run build`
+To run this project, install it locally using npm:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+$ cd ../project-folder
+$ npm install
+$ npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Sources
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### All sources used to help me build this project. <br> From handling global state in MobX to details like certain javascript quirks or TailwindCSS grouped hover states.
 
-### `npm run eject`
+> - [Baasic](https://dev.baasic.com/) docs
+> - [MobX](https://mobx.js.org/README.html) docs
+> - [MDN](https://developer.mozilla.org/en-US/) docs
+> - [TailwindCSS](https://tailwindcss.com/docs/installation) docs
+> - [Monsterlessons Academy](https://www.youtube.com/@MonsterlessonsAcademy/videos) Youtube
+> - [Maksim Ivanov](https://www.youtube.com/@satansdeer1) Youtube
+> - [ChatGPT](https://openai.com/blog/chatgpt/) 🤖
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## To-Do
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Notification** (e.g. toast notification) when the request was successful or when it throws an error.
+2. **Better UI/UX**:
+   - Filter and sort section redesign, a pop up sidebar is not really intuitive but neither a header dropdown seemed like a better option.
+   - List container with sticky header for column indicators needs redesign.
+3. **Mobile responsive** optimization, might not be necessary but I will let you decide 😄
