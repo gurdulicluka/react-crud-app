@@ -1,6 +1,6 @@
 import { observer } from "mobx-react";
 
-import store from "../../store/vehiclesStore";
+import store from "../../common/vehiclesStore";
 
 const PaginationItem = observer(({ page, currentPage, onPageChange }) => {
   return (

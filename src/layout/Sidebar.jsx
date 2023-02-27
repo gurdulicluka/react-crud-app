@@ -1,8 +1,8 @@
 import { IoClose } from "react-icons/io5";
 
+import store from "../common/vehiclesStore";
 import Filter from "../components/Sidebar/Filter";
 import Sort from "../components/Sidebar/Sort";
-import store from "../store/vehiclesStore";
 
 const Sidebar = ({ setShowSidebar, showSidebar }) => {
   const { setParams, params } = store;

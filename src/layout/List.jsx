@@ -1,8 +1,8 @@
 import { observer } from "mobx-react";
 
+import store from "../common/vehiclesStore";
 import ListHeader from "../components/List/ListHeader";
 import ListItem from "../components/List/ListItem";
-import store from "../store/vehiclesStore";
 
 const List = observer(() => {
   return (
