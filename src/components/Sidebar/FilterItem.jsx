@@ -1,7 +1,7 @@
 import { observer } from "mobx-react";
 import React from "react";
 
-import store from "../../store/vehiclesStore";
+import store from "../../common/vehiclesStore";
 
 const FilterItem = observer(({ filterName, filterType }) => {
   return (

@@ -5,7 +5,7 @@ import {
   IoTrashOutline,
 } from "react-icons/io5";
 
-import store from "../../store/vehiclesStore";
+import store from "../../common/vehiclesStore";
 
 const ListEditButton = ({
   showEditForm,
@@ -50,7 +50,7 @@ const ListEditButton = ({
             />
           </button>
           <button
-            onClick={() => store.deleteData(vehicleId)}
+            onClick={() => store.deleteVehicle(vehicleId)}
             type="button"
             className="group/deleteBtn h-[28px] w-[28px] rounded-full hover:bg-red-500"
           >

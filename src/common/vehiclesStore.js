@@ -1,4 +1,3 @@
-import axios from "axios";
 import {
   action,
   computed,
@@ -8,8 +7,7 @@ import {
   toJS,
 } from "mobx";
 
-const webApiUrl =
-  "https://api.baasic.com/beta/callyse-226-201/resources/vehicles/";
+import { vehicleService } from "./vehiclesService";
 
 class VehiclesStore {
   constructor() {
@@ -19,13 +17,13 @@ class VehiclesStore {
       allRecords: observable,
       appliedFilters: observable,
       params: observable,
+      getVehicles: action,
+      createVehicle: action,
+      updateVehicle: action,
+      deleteVehicle: action,
       queryString: computed,
       buildSearchQuery: action,
       getFilterData: action,
-      getData: action,
-      postData: action,
-      putData: action,
-      deleteData: action,
       setParams: action,
       applyFilters: action,
       clearActiveFilters: action,
@@ -51,9 +49,9 @@ class VehiclesStore {
     searchQuery: "",
   };
 
-  getData = async () => {
+  getVehicles = async () => {
     try {
-      const response = await axios.get(webApiUrl + `?${this.queryString}`);
+      const response = await vehicleService.get(this.queryString);
       runInAction(() => {
         this.vehicles = response.data.item;
         this.allRecords = response.data.totalRecords;
@@ -64,33 +62,34 @@ class VehiclesStore {
     }
   };
 
-  postData = async (newData) => {
+  createVehicle = async (model) => {
     try {
-      await axios.post(webApiUrl, newData);
+      await vehicleService.post(model);
       runInAction(() => {
-        this.getData();
+        this.getVehicles();
       });
     } catch (error) {
       console.error(error);
     }
   };
 
-  putData = async (id, updatedData) => {
+  updateVehicle = async (id, model) => {
     try {
-      await axios.put(webApiUrl + id, updatedData);
+      await vehicleService.put(id, model);
       runInAction(() => {
-        this.getData();
+        this.getVehicles();
       });
     } catch (error) {
       console.error(error);
     }
   };
 
-  deleteData = async (id) => {
+  deleteVehicle = async (id) => {
     try {
-      await axios.delete(webApiUrl + id);
+      await vehicleService.delete(id);
       runInAction(() => {
         this.vehicles = this.vehicles.filter((item) => item.id !== id);
+        this.allRecords -= 1;
       });
     } catch (error) {
       console.error(error);
@@ -113,13 +112,13 @@ class VehiclesStore {
   setParams = (obj) => {
     runInAction(() => {
       Object.assign(this.params, obj);
-      this.getData();
+      this.getVehicles();
     });
   };
 
   getFilterData = async () => {
     try {
-      const response = await axios.get(webApiUrl + `?rpp=${this.allRecords}`);
+      const response = await vehicleService.get(`rpp=${this.allRecords}`);
       runInAction(() => {
         this.allFilters.category = [
           ...new Set(response.data.item.map((item) => item.category)),

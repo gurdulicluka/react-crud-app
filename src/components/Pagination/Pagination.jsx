@@ -2,7 +2,7 @@ import { observer } from "mobx-react";
 import React, { useState } from "react";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 
-import store from "../../store/vehiclesStore";
+import store from "../../common/vehiclesStore";
 import PaginationItem from "./PaginationItem";
 import RecordsPerPageMenu from "./RecordsPerPageMenu";
 

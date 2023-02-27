@@ -2,7 +2,7 @@ import { observer } from "mobx-react-lite";
 import React from "react";
 import { IoFunnel } from "react-icons/io5";
 
-import store from "../../store/vehiclesStore";
+import store from "../../common/vehiclesStore";
 import FilterItem from "./FilterItem";
 
 const Filter = observer(() => {

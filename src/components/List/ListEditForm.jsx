@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import store from "../../store/vehiclesStore";
+import store from "../../common/vehiclesStore";
 
 const ListEditForm = ({
   id,
@@ -28,7 +28,7 @@ const ListEditForm = ({
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    store.putData(id, formData.current);
+    store.updateVehicle(id, formData.current);
     setShowEditForm(false);
   };
 

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-import store from "../../store/vehiclesStore";
+import store from "../../common/vehiclesStore";
 
 const PostDataForm = ({ setShowForm }) => {
   const formData = useRef({});
@@ -11,7 +11,7 @@ const PostDataForm = ({ setShowForm }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    store.postData(formData.current);
+    store.createVehicle(formData.current);
     setShowForm(false);
   };
 
