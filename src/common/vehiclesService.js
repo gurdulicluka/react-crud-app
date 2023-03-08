@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const baseUrl =
-  "https://api.baasic.com/beta/callyse-226-201/resources/vehicles/";
+const baseUrl = "https://api.baasic.com/v1/callyse-226-201/resources/vehicles/";
 
 export const vehicleService = {
   get: async (urlParams) => {
